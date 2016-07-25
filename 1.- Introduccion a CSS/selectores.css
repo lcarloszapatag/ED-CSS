@@ -1,0 +1,198 @@
+/*
+LOS SELECTORES SON LOS QUE INDICAN A QUE ELEMENTOS HTML APLICAR
+LOS ESTILOS
+*/
+
+/*
+    1.SELECTORES DE ETIQUETA
+
+    Se aplican a elementos HTML. Basta indicar el nombre de la etiqueta.
+
+        body{
+            color:red;
+        }
+
+        h1{
+            color:green;
+        }
+    */
+
+    body{
+        background: grey;
+    }
+
+/*
+    A los estilos aplicados a los selectores de etiquetas se les conoce como
+    estilos base (Metodologia SMACSS).
+*/
+
+/*
+  2.Selectores de Clase
+
+    Las clases son atributos de HTML que se indican con class="" . Estas clases
+    se usan para manipular el html con CSS o JS.
+
+    Para seleccionar una clase con CSS se utiliza un punto "." seguido del nombre
+    de la clase.
+
+    HTML
+    <p class = "alerta">Ha sucedido un error</p>
+
+    CSS
+    .alerta{
+        backgroud: red;
+        color: white;
+    }
+*/
+
+    .alerta{
+        background: red;
+        color: white;
+    }
+
+/*
+    3. SELECTORES DE ID
+
+    Se selecciona un id con el simbolo "#" seguido del nombre del id. Puesto que los
+    id son unicos en HTML, no se considera una buena practica usar id en css.
+
+    HTML
+    <h1 id="titulo">Curso CSS Desde Cero</h1>
+
+    CSS
+    #titulo{
+        color:yellow;
+    }
+*/
+    #titulo{
+        color:yellow;
+    }
+
+/*
+
+    NOTAS
+
+    1. Los id se usan para crear marcadores en el HTML o para manipular el DOM con
+    javascript. Pero no se recomiendan para css.
+
+    2. Las clases se pueden usar css o con JS. Por lo cual una buena prectica
+    es nombrar con el prefijo js- a las clases para javascript.
+
+    <ul class="menu js-menu"></ul>
+
+    3. Las clases y los id pueden  unificarse en el selector.
+    Esto significa que podrias seleccionar a elementos que tengan dos clases y un ID,
+    o a una etiqueta y una clase, etc.
+
+    .menu.header{
+        color: green;
+    }
+
+    p.mensaje#incial{
+        background: yellow;
+    }
+*/
+    /*Se aplica a la etiqueta que tenga las dos clases en cualquier orden*/
+    .menu.header{
+        background: green;
+    }
+
+    /*Para aplicar tiene que haber un p con una clase "mensaje" y un id="inicial"*/
+    p.mensaje#inicial{
+        background: yellow;
+    }
+
+    /*
+    SELECTORES DESCENDIENTES
+
+    Se aplican a un elemento siempre que sea hijo de otro.
+    Su sintaxis es asi:
+
+    ancestro descendiente{
+
+    }
+
+    *No importa el nivel del descendiente
+    *Siempre se debe intentar descender lo menos posible
+
+
+
+    */
+
+    ul ul a{
+        color: red;
+    }
+
+    /*
+    ANIDAR SELECTORES
+
+    Consiste en separar selectores por comas. De esta manera los estilos
+    se aplican a todos los selectores.
+
+    DRY: Dont repeat your self
+    */
+
+
+    h1,p,ul{
+        font-size: 20px;
+    }
+
+/*
+    SELECTOR DE HIJO DIRECTO
+
+    Selecciona solo a los elementos que estan dentro  directamente de otro elemento.
+
+    padre > hijo{
+
+    }
+*/
+    .menu__link{
+        font-size: 17px;
+    }
+
+    /* La mejor practica es utilizar las clases y evitar muchos selectores anidados */
+    .level-1{
+        color: red;
+    }
+
+    .level-2{
+        color: green;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
