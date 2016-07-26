@@ -15,6 +15,20 @@ p{
 }
 
 /*
+    El valor inherit fuerza a un elemento a heredar la propiedad correspondiente de su ancesto
+    mas cercano
+*/
+
+li{
+    color: red;
+}
+
+a{
+    color: inherit;
+}
+
+/*
+
     CASCADA
 
     La cascada viene del nombre de CSS (Cascade Style Sheet) y significa que los estilos
