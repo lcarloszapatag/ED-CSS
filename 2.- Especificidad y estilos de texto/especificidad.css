@@ -1,0 +1,84 @@
+/*
+    Especificidad
+
+    Es un valor que adquieren los selectores y que determina que regla CSS( o que estilos)
+    se aplican a un elemento cuando existen conflictos.
+
+    !important siempre gana en especificidad.
+    Por eso que es una muy mala practica.
+
+    !important > especificidad > cascada
+
+    ¿Como se calcula la especificidad?
+
+    Etiqueta              -> 1
+    Clases y pseudoclases -> 10
+    Id                    -> 100
+    Estilos en linea      -> 1000
+*/
+p{
+    /*Especificidad: 1*/
+    color: purple;
+}
+
+li{
+    /*Especificidad: 1*/
+    color: red
+}
+
+a{
+    /*Especificidad: 1*/
+    color: inherit;
+}
+
+body p.parrafo#parrafo{
+    /*Especificidad: 112*/
+    color: peru;
+}
+
+p.parrafo#parrafo{
+    /*Especificidad: 101*/
+    color: skyblue;
+}
+
+.parrafo#parrafo{
+    /*Especificidad: 110*/
+    color: yellow;
+}
+
+p#parrafo{
+    /*Especificidad: 101*/
+    color: pink;
+}
+
+#parrafo{
+    /*Especificidad: 100*/
+    color:steelblue;
+}
+
+.parrafo{
+    /*Especificidad: 10*/
+    color: green;
+}
+
+body{
+    /*Especificidad: 1*/
+    color: tomato;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

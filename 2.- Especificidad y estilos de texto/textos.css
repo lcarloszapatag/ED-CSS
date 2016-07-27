@@ -1,0 +1,188 @@
+/*
+    TEXTOS
+
+    Los tipos de letras en el mundo profesional se conocen como familias
+    de fuentes o tipografias.
+
+    Familias tipograficas
+        Son fuentes especificas con nombres comerciales.
+            Arial, Verdana, Times New Roman, Helvetica,
+            Ubuntu
+    Familias genericas
+        Son grupos de fuentes segun sus caracteristicas(para web).
+
+            Serif
+                Con adorno(serifa) en los remates.
+            Sans Serif
+                Sin adorno en los remates(de palo seco).
+            Cursive
+                Letras inclinadas( algunas falsas, fake) y otras provienen
+                de la fuente.
+            Monospace
+                Cada caracter ocupa el mismo espacio horizontal.
+                (ideal para escribir codigo)
+
+    Si se asigna una familia tipografica en un estilo, esta debera estar instalada en el
+    sistema operativo del cliente sino no lo vera.
+
+    Dos maneras de solucionarlo:
+
+    1. Definir fuentes alternativas.
+        Se separan por comas. Si la primera no es encontrada, se busca la segunda y asi
+        sucesivamente. Se recomienda terminar con una fuente generica.
+        *Si el nombre de  una fuente tiene mas de una palabra se debe encerrar entre comillas.
+        Ej.:
+
+        p{
+            font-family: "Times New Roman", serif;
+        }
+    2. Usar un proveedor de fuentes en internet(Google Fonts y Adobe Typekit)
+       http://google.com/fonts
+
+    3. Almacenar las fuentes en un servidor propio y usar la regla @font-face {},
+    sin embargo para evitarse el trabajo de convertir los formtatos (para el
+    cross-browser) se recomienda usar generadores como Font Squirrel o Web2Font.
+
+    Para el ejemplo he descargado la fuente StarJedi, paso siguiente es ir a:
+    http://fontsquirrel.com
+    http://font2web.com
+
+*/
+@font-face {
+    font-family: 'starwars';
+    src: url('fonts/starjedi-webfont.woff2') format('woff2'),
+    url('fonts/starjedi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1{
+    font-family: 'starwars', 'cursive';
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+}
+
+body{
+    background: #000;
+    /*text-align: center;*/
+    color: white;
+    margin: 0;
+}
+
+/*
+    TAMAÑOS DE LAS FUENTES
+
+    Unidades de medida para definir el tamaño de la fuente.
+
+    px  -> Tamano absoluto.
+    em  -> Tamano relativo al contexto.
+    rem -> Tamano relativo a la etiqueta <html></html>
+    %   -> Tamano normal de una fuente.
+    vh  -> 1vh = 1% del alto(height) del viewport.
+    vW  -> 1vw = 1% del ancho(width) del viewport.
+
+    Mito: El rem no es relativo al body, el rem es relativo al html.
+*/
+html{
+    /*font-size: 30px;*/
+}
+
+h1{
+    font-size: 1.5em;
+}
+
+p{
+    color: white;
+    font-size: 2em;
+}
+
+p span{
+    font-size: 2rem;
+}
+
+ul{
+    text-align: left;
+    font-size: .7em;
+}
+
+/*El body por defecto tiene un font-size de 16px*/
+
+span{
+    color: #fff;
+    font-family: starwars;
+    font-size: 30vh; /*La mitad de la altura del viewport*/
+    line-height: 100vh;
+    display: block;
+    text-align: center; /*No se centra xq es inline, por eso los vuevlo bloque con linea arriba*/
+}
+
+/*
+    OTRAS PROPIEDADES DE LOS TEXTOS:
+
+    line-height -> Determina la altura de la linea.
+
+    *Se usa mucho line-height es cuando queremos alinear verticalemte una sola linea.
+
+*/
+
+p{
+    line-height: 3;
+    text-transform: capitalize;
+    text-indent: 100px;
+}
+
+div{
+    width: 300px;
+    height: 100px;
+    background: yellow;
+    font-size: 3em;
+    color: #000;
+    /*Alineando exactamente al centro*/
+    text-align: center;
+    line-height: 100px; /*Si igualo el line-height a la altura de la caja se centra verticalmente*/
+
+    text-transform: lowercase;
+    letter-spacing: 20px;
+}
+
+/*
+    El line-height es ideal para alinear horizontal y verticalmente texto de una sola linea,
+    ya sea en botonos, algunos span, etc. Si se requiere para mas lineas, se recomienda el
+    uso de flexbox.
+*/
+
+/*
+    Text-transform: lowercase | uppercase | capitalize
+
+    Lowercase: Pasa las palabras a minusculas.
+    Uppercase: Pasa las letras a mayusuclas.
+    Capitalize: Pasa la primera letra de las palabras a mayusculas.
+
+    text-align: center | left |right | justify
+    *Solo se aplican a elementos de bloque.
+    *justify: se usa para que los espacios se completen, no se recomienda para web.
+
+    font-weiht: bold(negritas) | normal;
+
+    font-style: italic(cursiva) | normal;
+
+    text-decoration: underline( subrayado) | none(sin subrayado);
+
+    letter-spacing: value; (con una unidad determina la separacion de las letras)
+
+    text-indent: Mueve la primera letra de un "bloque" de texto.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
