@@ -1,0 +1,103 @@
+/*
+    La propiedad abreviada (shorthand) "font".
+
+    La propiedad font agrupa a las siguientes propiedades:
+
+        font-weight
+        font-style
+        **font-size/line-height
+        **font-family
+
+    El orden en que ponemos los valores es muy importante.
+    **Es obligatorio que estén al menos font-size y font-family( font familiy
+    siempre al final).
+    El orden del font-weight y el font-style puede variar entre ellos.
+    Si se incluye line-height debe ir despues de font size y separado por un slash.
+
+*/
+
+h1{
+    /*font-style: normal;*/
+    /*font-weight: bold;*/
+    /*font-family: Georgia, serif;*/
+    /*line-height: 2.5em;*/
+    /*font-size: 1.5em;*/
+    font: normal bold 1.5em/2.5em Georgia,serif;
+    background: yellow;
+}
+
+div{
+    width: 300px;
+    background: grey;
+}
+
+/*
+    Controlar el flujo de los textos
+
+    Separacion de letras y palabras:
+        letter-spacing
+        word-spacing
+
+    word-break: break-all | keep-all | none;
+        *keep-all y none no hacen nada significativo, es como no poner nada.
+
+    word-wrap: break-word
+        Cortan las palabras que son mas anchas que el contenedor.
+
+    white-space: Controla los espacios en blanco y saltos de linea.
+        normal(los ignora)
+        pre( los trata como <pre></pre>)
+        nowrap (no hay saltos de linea ni espacios, salvo que pongas un <br>)
+        pre-wrap: igual que pre, pero permite saltos de linea al final de contenedor.
+        pre-line(Quito los espacios en blanco, pero respeta los saltos de linea)
+
+    text-overflow: clip | ellipsis
+        Determina si un texto que se escapa de su contenedor se cortara en seco(clip)
+        o se mostrará una ayuda visual(puntos suspensivos)(ellipsis).
+        Solo funciona si al contenedor se le aplica obverflow:hidden(para que oculte
+        todo el contenido que escapa de el).
+
+*/
+
+div{
+    /*font-style: italic;*/
+    /*letter-spacing: .03em;*/
+    /*word-spacing: 1em;*/
+    /*text-align: justify;*/
+    /*word-break: break-all; /!*Las palabras se cortan donde termina la caja*!/*/
+    word-wrap: break-word;
+    /*white-space: nowrap;*/
+    /*white-space: pre-wrap;*/
+}
+
+.pre{
+    /*white-space: normal;*/
+    /*white-space: pre;*/
+    white-space: pre-line;
+}
+
+.code{
+    width: 300px;
+    white-space: pre;
+    background: grey;
+    /*word-wrap: break-word;*/
+    /*overflow: auto;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,3 +23,7 @@ Estilos en linea      -> 1000
 2. Fuentes en servidor local.
 3. Tamaño de fuentes.
 4. Otras propiedades.
+5. Shorthand font
+6. Controlar el flujo del texto.
+7. Shorthand - fonts.
+8. Control de flujo de los textos.
