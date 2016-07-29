@@ -1,0 +1,174 @@
+/*
+    Las seudoclases son tipos de selectores que se "activan" en determinadas
+    circunstancias. Se escriben con ":"
+
+    Por ejemplo:
+
+    :hover {
+
+    }
+
+    Con la excepcion de "::selection"
+
+        :hover   -> Cuando se pasa el mouse.
+        :active  -> cuando se hace clic.
+        :visited -> Un enlace que ya se visitó.
+        :focus   -> Un campo de formulario seleccionado.
+        :empty   -> Selecciona elementos vacíos.
+        :not()   -> Selecciona a los elementos que no coincidan con el selector
+        pasado como parámetro.
+        ::selection -> Es para aplicar estilos a la seleccion.
+        :target -> Selecciona el destino de un enlace interno.
+*/
+
+/*:hover {*/
+    /*/!*color: red;*!/*/
+/*}*/
+
+/*h1:hover {*/
+    /*/!*color: red;*!/*/
+/*}*/
+
+/*h1 :hover {*/
+    /*color: red;*/
+/*}*/
+
+h1:active{
+    color: red;
+}
+
+input:focus {
+    background: red;
+}
+
+div {
+    /*height: 300px;*/
+}
+
+/*Si quisiera detectar si hay divs vacios*/
+
+div:empty {
+    background: red;
+}
+
+.not {
+    /*color: red;*/
+}
+
+/*Como selecciono solo el primero o el segundo parrafo,
+es decir excluir al segundo.
+*/
+
+p:not(.not) {
+    /*color:red;*/
+}
+
+h1::selection {
+    background: purple;
+    color: white;;
+}
+
+#destino {
+    display: none;
+}
+
+#destino:target{
+    display: block;
+    background: #333;
+    color: #fff;
+}
+
+/*
+Selectores avanzados
+
+    :first-child
+    :last-child
+        Seleccionan al primer y ultimo hijo de un elemento, sin importar que tipo de elemento es.
+
+    :first-of-type
+    :last-of-type
+        Seleccionan al primer y ultimo hijo segun el elemento. Por ejemplo:
+        p:first-of-type: Selecciona al primer parrafo hijo.
+
+    :nth-child()
+    :nth-of-type()
+        Reciben parametros
+            numero          -> 5(selecciona el 5to elemento)
+            multiplo de n   -> 2n( Selecciona de 2 en 2)
+            formula         -> 3n+1 ( Selecciona a 1, 4, 7)
+            even/odd        -> pares, impares
+
+    Trucos:
+        Seleccionar los primeros 4 elementos:      -n+4
+        Seleccionar los elementos a partir del 4.  n+4
+
+    :nth-last-child()
+    :nth-last-of-type()
+        Identico a nth-child() y nth-of-type() pero se cuentan desde el final.
+*/
+
+article :first-child{
+    /*color: red;*/
+}
+
+/*Para seleccionar al primer o ultimo parrafo*/
+
+/*p:last-of-type{*/
+    /*color: red;*/
+/*}*/
+
+p:nth-of-type(2){
+    color: red;
+}
+
+/*li:nth-child(3n-1){*/
+    /*background: teal;*/
+    /*color: #fff;*/
+/*}*/
+
+/*Los 4 primeros*/
+/*li:nth-child(-n+4) {*/
+    /*background: teal;  */
+/*}*/
+
+/*Seleccionar a partir del 4to elemento*/
+/*li:nth-child(n+4) {*/
+    /*background: teal;*/
+    /*color: #fff;*/
+/*}*/
+
+/*Tambien se puede combinar*/
+/*Seleccioname a partir del cuarto y los que sean pares*/
+/*li:nth-child(n+4):nth-child(even) {*/
+    /*background: teal;*/
+    /*color: #fff;*/
+/*}*/
+
+/*li:nth-last-child(2) {*/
+    /*background: teal;*/
+/*}*/
+
+/*Seleccionar los 4 ultimos*/
+li:nth-last-child(-n+4) {
+    background: teal;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

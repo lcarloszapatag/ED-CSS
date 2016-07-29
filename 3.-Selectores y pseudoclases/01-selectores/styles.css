@@ -1,0 +1,97 @@
+/*
+    Selector Universal es un asterisco, y selecciona a todos los elementos.
+    El uso mas comun actualmente para este selector es el siguiente:
+
+    *{
+        box-sizing: border-box;
+    }
+
+    *El codigo de arriba evita que se desborde las cajas.
+*/
+
+/*
+    Selectores hermanos:
+        1. Hermano siguiente( singular). a + b
+            b esta justo despues de a. Se selecciona b.
+        2. Hermanos siguientes( plural). a ~ b
+            b( o varios b) estan despues de a, no importa si entre ellos hay otros
+            elementos. Se selecciona a todos los b.
+
+        **En ambos casos se selecciona el b.
+
+    En CSS no se pueden seleccionar hermanos hacia atras ni tampoco padres.
+*/
+
+h1 + p + p{
+    color: red;
+}
+
+h2 + div p {
+    color: red;
+}
+
+/*h1 ~ p{*/
+    /*color: red;*/
+/*}*/
+
+/*
+    Selectores de atributos
+
+    Un atributo se selecciona entre corchetes []
+
+    Se puede indicar solo el atributo, o el atributo y su valor.
+*/
+
+[class]{
+    /*color: red;*/
+}
+
+[target="_blank"]:after{
+    content: "abre en pestaña nueva";
+    margin-left: .5em;
+    font-size: .6em;
+    position: relative;
+    top: -.5em;
+}
+
+/*
+Los selectores de atributos aceptan comodines
+
+    $   -> termina con
+    ^   -> comienza con
+    *   -> contiene a
+
+    Ejemplo:
+
+    [src$="jpg"] //Se aplicaría estilo a todas las imagenes .jpg
+
+    [href^="http://"] //Con los enlaces que comiencen con http
+
+    [class*="icon-"] // Se aplicaría a las clases que comiencen con "icon-"
+        **Este comodin me busca en cualquier lugar, ideal para atributos class con dos o mas valores.
+*/
+
+img[src$="jpg"] {
+    border: 2px solid black;
+}
+
+[class*="parrafo"] {
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
