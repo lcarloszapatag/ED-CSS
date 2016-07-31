@@ -1,0 +1,116 @@
+/*
+¿Que es el Box Model?
+
+    El conjunto de algoritmos por los cuales el navegador dibuja una caja en pantalla con todas sus
+    propiedades.
+
+¿Que es una caja?
+
+    Es un rectangulo definido por todo elemento al renderizarse la pagina.
+
+Elementos de una caja
+
+    INTERNOS
+        content (content-box)
+            Es el contenido.
+        padding (padding-box)
+            Es el espacio entre el contenido y el limite de la caja.
+        border (border-box)
+            Linea que se dibuja alrededor de la caja.
+
+    EXTERNOS
+        margin
+            Es la separacion entre una caja y las adyacentes.
+
+¿Como se definen las dimensiones de una caja?
+
+    Normalmente las dimensiones son:
+
+    dimensiones declaradas + padding total + border total
+    ( content box + padding box + border box)
+
+    Si las dimensiones no estan declaradas, lo normal es:
+
+    ancho
+        total del contenido( bloque).
+        total del contenido( inline).
+
+    alto
+        definido por su contenido.
+
+Propiedad "box-sizing" (css3)
+
+    Controla como se interpreta el tamaño de la caja.
+    Sus valores son los siguientes:
+        content-box (default).
+        padding-box.
+        border-box ( lo recomendado, el padding y el border se calculan por dentro).
+
+    ########## RECOMENDACION ##########
+
+    Asignar "box-sizing: boder-box"; a todos los elementos SIEMPRE.
+
+    Si no usas normalize.css, se recomienda usar esto:
+
+    * {
+        box-sizing: border-box;
+    }
+*/
+
+.box1 {
+    width: 400px;
+    height: 200px;
+    background: yellow;
+    padding: 20px;
+    border: 2px solid black;
+    /*box-sizing: border-box;*/
+}
+
+/*Cuando la pagina renderiza estos estilos, las medidas de esta caja es
+    ancho * alto => 444*244
+*/
+
+
+/*
+    DIMENSIONES EN PORCENTAJES
+
+    1. Siempre se calculan respecto al ancho del contendeor.
+    2. Es imposible definir alturas en porcentajes ( con ciertas excepciones, como con alto
+    definido en el padre).
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.box2-container {
+    background: yellow;
+    width: 500px;
+    /*height: 600px;*/
+}
+
+.box2{
+    border: 1px solid black;
+    width: 50%;
+    /*height: 50%; /!*Este nunca se va a aplicar(cuando hablamos de porcerntajes)*!/*/
+    padding-top: 10%; /* 50px (Es el 10% del ancho del padre) */
+    /*height: 50%;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
